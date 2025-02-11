@@ -9,7 +9,7 @@ public class SongFilter implements Filter {
         try {
             return Files.walk(rootDir)
                     .filter(Files::isRegularFile)
-                    .filter(path -> path.getFileName().toString().endsWith(".ini"));
+                    .filter(path -> path.getFileName().toString().contains("song.ini"));
         } catch (Exception e) {
             if(e.getCause() instanceof IOException) {
                 e.printStackTrace();
