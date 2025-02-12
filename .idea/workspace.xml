@@ -4,32 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="Spit out file now in my downloads (dunno if it works for other users)">
+    <list default="true" id="3a3b7a02-a585-475e-aa94-bdf560e03bfc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/_CHDataExporter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongFilterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongFilterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextFileGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextFileGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CloneHeroSongList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongFilterImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongListGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextFileGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Record" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -46,97 +48,75 @@
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2su3Re8emPNdKyQr5NqUh9psg5I" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2sxQNOsrFYorP3rtp4FI7XnMBFO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Main.executor": "Run",
     "Application.Runner.executor": "Run",
-    "Application.main (1).executor": "Run",
-    "Application.main.executor": "Run",
-    "Application.src.main.executor": "Run",
+    "HTTP Request.scratch | #2.executor": "Run",
+    "Maven.clone-hero-song-list [clean].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-assembly-plugin:3.6.0:single].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-assembly-plugin:3.7.1:help].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-assembly-plugin:3.7.1:single].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-install-plugin:3.1.1:install-file].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-jar-plugin:3.2.2:jar].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-shade-plugin:3.5.1:help].executor": "Run",
+    "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-shade-plugin:3.5.1:shade].executor": "Run",
+    "Maven.clone-hero-song-list [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/user/Desktop/CS/CloneHeroSongList/songs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.import",
+    "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "HTTP Request"
+    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/songs" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
   <component name="RunManager" selected="Application.Runner">
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
+      <module name="clone-hero-song-list" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="scratch | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
       <module name="CloneHeroSongList" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <module name="_CHDataExporter" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main" />
-      <module name="src" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="src.main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main" />
-      <module name="_CHDataExporter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="_CHDataExporter" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="_CHDataExporter" />
+      <module name="CloneHeroSongList" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="_CHDataExporter" />
+      <module name="CloneHeroSongList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -159,7 +139,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="Python.FlaskServer">
-      <module name="_CHDataExporter" />
+      <module name="CloneHeroSongList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -173,7 +153,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="_CHDataExporter" />
+      <module name="CloneHeroSongList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -186,7 +166,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="_CHDataExporter" />
+      <module name="CloneHeroSongList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -203,7 +183,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="_CHDataExporter" />
+      <module name="CloneHeroSongList" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -219,48 +199,10 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="CloneHeroSongList" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="CloneHeroSongList" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.src.main" />
-        <item itemvalue="Application.main" />
-        <item itemvalue="Application.main" />
+        <item itemvalue="HTTP Request.scratch | #2" />
       </list>
     </recent_temporary>
   </component>
@@ -275,69 +217,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="" />
-      <created>1739291627659</created>
+      <changelist id="3a3b7a02-a585-475e-aa94-bdf560e03bfc" name="Changes" comment="" />
+      <created>1739394704225</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1739291627659</updated>
-      <workItem from="1739291628783" duration="5719000" />
-      <workItem from="1739298558281" duration="454000" />
+      <updated>1739394704225</updated>
+      <workItem from="1739394705389" duration="3179000" />
+      <workItem from="1739398533364" duration="3585000" />
+      <workItem from="1739402255700" duration="210000" />
+      <workItem from="1739402473937" duration="1921000" />
     </task>
-    <task id="LOCAL-00001" summary="Fix project">
-      <option name="closed" value="true" />
-      <created>1739301584388</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1739301584388</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Reading name artist and charter but needs to ignore some stuff">
-      <option name="closed" value="true" />
-      <created>1739317039418</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1739317039418</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Spits out list of songs in a given directory in a sorted non duplicate order">
-      <option name="closed" value="true" />
-      <created>1739320333847</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1739320333847</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Spit out file now in my downloads (dunno if it works for other users)">
-      <option name="closed" value="true" />
-      <created>1739324286620</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1739324286620</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix project" />
-    <MESSAGE value="Reading name artist and charter but needs to ignore some stuff" />
-    <MESSAGE value="Spits out list of songs in a given directory in a sorted non duplicate order" />
-    <MESSAGE value="Spit out file now in my downloads (dunno if it works for other users)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spit out file now in my downloads (dunno if it works for other users)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
