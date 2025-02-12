@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class main {
@@ -14,11 +12,11 @@ public class main {
      * and other user facing stuff like how they want output ect
      * <p>
      * get the directory and step thru and get all song.ini files
-     *
+     * <p>
      * then create song data type for every song.ini
      */
 
-    public static void main(String[] args) throws IOException {
+    public static void main (String[] args) throws IOException {
         System.out.println("PROGRAM START");
 
         final Path selectedFile = getDirectory();
@@ -26,7 +24,7 @@ public class main {
         SongFilter songFilter = new SongFilter();
         Stream<Path> streamOfSongFiles = songFilter.getSongConfigFiles(selectedFile);
 
-        Stream<Song> steamOfSongs = getSongs(streamOfSongFiles);
+        Stream<Song> steamOfSongs = getSongs(streamOfSongFiles).distinct().sorted();
 
         steamOfSongs.forEach(System.out::println);
 
@@ -38,8 +36,8 @@ public class main {
     private static Stream<Song> getSongs(final Stream<Path> streamOfSongs) throws IOException {
         Stream.Builder<Song> builder = Stream.builder();
 
-        for (Path path : streamOfSongs.toList()) {
-            Scanner scanner = new Scanner(path);
+        for (final Path path : streamOfSongs.toList()) {
+            final Scanner scanner = new Scanner(path);
 
             String name = "null";
             String artist = "null";
@@ -47,27 +45,35 @@ public class main {
 
 
             while (scanner.hasNext()) {
-                if(name.equals("null") || artist.equals("null") || charter.equals("null")) {
-                String line = scanner.nextLine();
-                    if (line.matches("artist[\\S | \\s]=[\\S | \\s](.*)")) {
-                        artist = line.split("=")[1].strip();
-                    } else if (line.matches("name[\\S | \\s]=[\\S | \\s](.*)")) {
-                        name = line.split("=")[1].strip();
-                    } else if (line.matches("charter[\\S | \\s]=[\\S | \\s](.*)")) {
-                        charter = line.split("=")[1].strip();
+                if (name.equals("null") || artist.equals("null") || charter.equals("null")) {
+                    String line = scanner.nextLine();
+                    if (line.startsWith("artist")) {
+                        artist = line
+                                .replaceAll("<color=.*?>|</color>", "")
+                                .split("=")[1]
+                                .strip();
+                    } else if (line.startsWith("name")) {
+                        name = line
+                                .replaceAll("<color=.*?>|</color>", "")
+                                .split("=")[1]
+                                .strip();
+                    } else if (line.startsWith("charter")) {
+                        charter = line
+                                .replaceAll("<color=.*?>|</color>", "")
+                                .split("=")[1]
+                                .strip();
                     }
-                }
-                else {
+                } else {
                     builder.add(new Song(
                             name,
                             artist,
-                            charter
+                            charter,
+                            false
                     ));
                     break;
                 }
             }
         }
-
         return builder.build();
     }
 
