@@ -16,8 +16,10 @@ public class Runner {
 
 
         SongListGenerator generator = new SongListGeneratorImpl();
-        generator.generateSongs().forEach(System.out::println);
+        TextFileGenerator textFileGenerator = new TextFileGeneratorImpl();
+        textFileGenerator.generateFile(generator.generateSongs());
 
+        System.out.println("Created output.txt");
 
         System.out.println("PROGRAM END");
 

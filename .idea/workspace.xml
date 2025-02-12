@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="Spits out list of songs in a given directory in a sorted non duplicate order">
-      <change afterPath="$PROJECT_DIR$/src/SongListGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SongFilterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TextFileGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -56,6 +60,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.Main.executor": "Run",
+    "Application.Runner.executor": "Run",
     "Application.main (1).executor": "Run",
     "Application.main.executor": "Run",
     "Application.src.main.executor": "Run",

@@ -1,4 +1,6 @@
 /**
+ * ADT to hold the data related to each song
+ *
  * @param name
  * @param artist
  * @param charter
@@ -6,7 +8,7 @@
  */
 public record Song (String name, String artist, String charter, Boolean match) implements Comparable {
     public String toString() {
-        return name + " " + artist + " " + charter + "\n";
+        return name + " | " + artist + " | " + charter;
     }
 
     /**
