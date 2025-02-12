@@ -1,40 +1,50 @@
-import javax.swing.*;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-public class main {
+public class SongListGeneratorImpl implements SongListGenerator {
 
-    /**
-     * Start visual and ask user for direcotry they want to search for songs
-     * and other user facing stuff like how they want output ect
-     * <p>
-     * get the directory and step thru and get all song.ini files
-     * <p>
-     * then create song data type for every song.ini
-     */
-
-    public static void main (String[] args) throws IOException {
-        System.out.println("PROGRAM START");
-
+    @Override
+    public Stream<Song> generateSongs() throws IOException {
         final Path selectedFile = getDirectory();
 
         SongFilter songFilter = new SongFilter();
         Stream<Path> streamOfSongFiles = songFilter.getSongConfigFiles(selectedFile);
 
-        Stream<Song> steamOfSongs = getSongs(streamOfSongFiles).distinct().sorted();
-
-        steamOfSongs.forEach(System.out::println);
-
-
-        System.out.println("PROGRAM END");
+        return getSongs(streamOfSongFiles).distinct().sorted();
 
     }
 
-    private static Stream<Song> getSongs(final Stream<Path> streamOfSongs) throws IOException {
-        Stream.Builder<Song> builder = Stream.builder();
+    private Path getDirectory() {
+        final File selectedFile;
+        final JFrame frame = new JFrame("File Selector");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLocationRelativeTo(null);
+
+        final JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Select File or Directory");
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // Allow selection of both
+
+        if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            selectedFile = fileChooser.getSelectedFile();
+            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+            // You can now work with the selected file
+        } else {
+            System.out.println("No file selected.");
+            throw new RuntimeException("No file selected on popup window!");
+        }
+
+        frame.dispose(); // Close the frame after use
+        return selectedFile.toPath();
+    }
+
+    private Stream<Song> getSongs(final Stream<Path> streamOfSongs) throws IOException {
+        final Stream.Builder<Song> builder = Stream.builder();
 
         for (final Path path : streamOfSongs.toList()) {
             final Scanner scanner = new Scanner(path);
@@ -43,7 +53,7 @@ public class main {
             String artist = "null";
             String charter = "null";
 
-
+            // get info from songs and add to the builder
             while (scanner.hasNext()) {
                 if (name.equals("null") || artist.equals("null") || charter.equals("null")) {
                     String line = scanner.nextLine();
@@ -64,6 +74,7 @@ public class main {
                                 .strip();
                     }
                 } else {
+                    //add to builder and exit when name, artist, and charter are found
                     builder.add(new Song(
                             name,
                             artist,
@@ -77,29 +88,4 @@ public class main {
         return builder.build();
     }
 
-    private static Path getDirectory() {
-        final File selectedFile;
-        JFrame frame = new JFrame("File Selector");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
-        frame.setLocationRelativeTo(null);
-
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Select File or Directory");
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // Allow selection of both
-
-        int result = fileChooser.showOpenDialog(frame);
-
-        if (result == JFileChooser.APPROVE_OPTION) {
-            selectedFile = fileChooser.getSelectedFile();
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-            // You can now work with the selected file
-        } else {
-            System.out.println("No file selected.");
-            throw new RuntimeException("No file selected on popup window!");
-        }
-
-        frame.dispose(); // Close the frame after use
-        return selectedFile.toPath();
-    }
 }

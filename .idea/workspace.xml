@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="Reading name artist and charter but needs to ignore some stuff">
+    <list default="true" id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="Spits out list of songs in a given directory in a sorted non duplicate order">
+      <change afterPath="$PROJECT_DIR$/src/SongListGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
@@ -43,7 +45,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2su3Re8emPNdKyQr5NqUh9psg5I" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,9 +85,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main (1)">
-    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main" />
+  <component name="RunManager" selected="Application.Runner">
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="CloneHeroSongList" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -250,7 +254,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main (1)" />
+        <item itemvalue="Application.Runner" />
         <item itemvalue="Application.src.main" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.main" />
@@ -292,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739317039418</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Spits out list of songs in a given directory in a sorted non duplicate order">
+      <option name="closed" value="true" />
+      <created>1739320333847</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739320333847</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,23 +324,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix project" />
     <MESSAGE value="Reading name artist and charter but needs to ignore some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reading name artist and charter but needs to ignore some stuff" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Spits out list of songs in a given directory in a sorted non duplicate order" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spits out list of songs in a given directory in a sorted non duplicate order" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
