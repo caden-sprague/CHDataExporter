@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 
 public class Runner {
@@ -9,6 +10,8 @@ public class Runner {
      * get the directory and step thru and get all song.ini files
      * <p>
      * then create song data type for every song.ini
+     * <p>
+     * then spit out a file to location
      */
 
     public static void main (String[] args) throws IOException {
@@ -17,9 +20,10 @@ public class Runner {
 
         SongListGenerator generator = new SongListGeneratorImpl();
         TextFileGenerator textFileGenerator = new TextFileGeneratorImpl();
-        textFileGenerator.generateFile(generator.generateSongs());
+        File outputTo = new File("/Users/user/Downloads/output.txt");
+        textFileGenerator.generateFile(generator.generateSongs(),  outputTo);
 
-        System.out.println("Created output.txt");
+        System.out.println("Created output.txt in location: \"" + outputTo.getAbsolutePath() + "\"");
 
         System.out.println("PROGRAM END");
 

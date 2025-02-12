@@ -10,10 +10,10 @@ public class SongListGeneratorImpl implements SongListGenerator {
 
     @Override
     public Stream<Song> generateSongs() {
-        final Path selectedFile = getDirectory();
+        final Path searchDirectory = getDirectory();
 
-        SongFilterImpl songFilter = new SongFilterImpl();
-        Stream<Path> streamOfSongFiles = songFilter.getSongConfigFiles(selectedFile);
+        final SongFilterImpl songFilter = new SongFilterImpl();
+        final Stream<Path> streamOfSongFiles = songFilter.getSongConfigFiles(searchDirectory);
 
         try {
             return getSongs(streamOfSongFiles).distinct().sorted();
@@ -23,6 +23,10 @@ public class SongListGeneratorImpl implements SongListGenerator {
         }
 
     }
+
+
+
+    //TODO probably want to remove making the JFrame and closing it here.
 
     /**
      * @return the directory user provides to be searched
@@ -50,24 +54,30 @@ public class SongListGeneratorImpl implements SongListGenerator {
 
     /**
      *
-     * @param streamOfSongConig stream that contains all the paths to all found song.ini files
+     * @param streamOfSongConfig stream that contains all the paths to all found song.ini files
      * @return Stream of Songs found within streamOfSongConfig
      * @throws IOException need for new Scanner
      */
-    private Stream<Song> getSongs(final Stream<Path> streamOfSongConig) throws IOException {
+    private Stream<Song> getSongs(final Stream<Path> streamOfSongConfig) throws IOException {
         final Stream.Builder<Song> builder = Stream.builder();
 
-        for (final Path path : streamOfSongConig.toList()) {
-            final Scanner scanner = new Scanner(path);
+        // get info from songs and add to the builder
+        streamOfSongConfig.forEach(path -> {
 
-            String name = "null";
-            String artist = "null";
-            String charter = "null";
+            final Scanner scanner;
 
-            // get info from songs and add to the builder
+            try {
+                scanner = new Scanner(path);
+            } catch (IOException e) {
+                System.out.println("Cannot create scanner for path: " + path);
+                throw new RuntimeException(e);
+            }
+
+            String name = "", artist = "", charter = "";
+
             while (scanner.hasNext()) {
-                if (name.equals("null") || artist.equals("null") || charter.equals("null")) {
-                    String line = scanner.nextLine();
+                if (name.isEmpty() || artist.isEmpty() || charter.isEmpty()) {
+                    final String line = scanner.nextLine();
                     if (line.startsWith("artist")) {
                         artist = line
                                 .replaceAll("<color=.*?>|</color>", "")
@@ -89,13 +99,12 @@ public class SongListGeneratorImpl implements SongListGenerator {
                     builder.add(new Song(
                             name,
                             artist,
-                            charter,
-                            false
+                            charter
                     ));
                     break;
                 }
             }
-        }
+        });
         return builder.build();
     }
 

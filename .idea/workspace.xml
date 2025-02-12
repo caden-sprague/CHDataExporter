@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="Spits out list of songs in a given directory in a sorted non duplicate order">
-      <change afterPath="$PROJECT_DIR$/src/SongFilterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextFileGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" afterDir="false" />
+    <list default="true" id="326e820b-aa9c-4096-88dd-619a08115385" name="Changes" comment="Spit out file now in my downloads (dunno if it works for other users)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongFilterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongFilterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextFileGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextFileGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739320333847</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Spit out file now in my downloads (dunno if it works for other users)">
+      <option name="closed" value="true" />
+      <created>1739324286620</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739324286620</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +336,8 @@
     <MESSAGE value="Fix project" />
     <MESSAGE value="Reading name artist and charter but needs to ignore some stuff" />
     <MESSAGE value="Spits out list of songs in a given directory in a sorted non duplicate order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spits out list of songs in a given directory in a sorted non duplicate order" />
+    <MESSAGE value="Spit out file now in my downloads (dunno if it works for other users)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spit out file now in my downloads (dunno if it works for other users)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
