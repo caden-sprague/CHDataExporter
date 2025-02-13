@@ -11,7 +11,7 @@ public class CSVGenerator {
     public void generateFile(final Stream<Song> songs, final File outputLocation) throws IOException {
         final CSVWriter writer = new CSVWriter(new FileWriter(outputLocation));
 
-        songs.forEach(song -> writer.writeNext(song.toString().split(" - ")));
+        songs.forEach(song -> writer.writeNext(song.toString().split(" ~ ")));
 
         writer.close();
     }

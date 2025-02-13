@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Getter;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -8,24 +9,28 @@ import java.net.http.HttpResponse;
 
 public class EnchorQuery {
 
-    static final String url = "https://api.enchor.us/search";
+    @Getter
+    private static final String url = "https://api.enchor.us/search/advanced";
 
     public String getEnchorLink(final String name, final String artist, final String charter) {
         final String jsonPayload = """
                 {
-                  "search": "%s",
-                  "page": 1,
-                  "per_page": 1,
-                  "chartIssues": null,
-                  "trackIssues": null,
-                  "instrument": "guitar",
-                  "artist": "%s",
-                  "charter": "%s",
-                  "sort": {
-                    "type": "name",
-                    "direction": "asc"
-                  }
-                }
+                   "name": {
+                     "value": "%s",
+                     "exclude": false,
+                     "exact": false
+                   },
+                   "artist": {
+                     "value": "%s",
+                     "exclude": false,
+                     "exact": false
+                   },
+                   "charter": {
+                     "value": "%s",
+                     "exclude": false,
+                     "exact": false
+                   }
+                 }
                 """.formatted(name, artist, charter);
 
         final HttpClient client = HttpClient.newHttpClient();
@@ -36,27 +41,40 @@ public class EnchorQuery {
                 .build();
 
         String response = "";
-        try {
-            response = client.send(request, HttpResponse.BodyHandlers.ofString()).body();
+            try {
+                response = client.send(request, HttpResponse.BodyHandlers.ofString()).body();
 //            System.out.println("Response Code: " + response.statusCode());
 //            System.out.println("Response Body: " + response.body());
-        } catch (Exception e) {
-            e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        if (response.contains("\"found\":0")) {
+            // TODO deal with this better
+            return "null";
         }
+        else {
 
-        try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-            final JsonNode rootNode = objectMapper.readTree(response);
+            try {
+                final ObjectMapper objectMapper = new ObjectMapper();
+                final JsonNode rootNode = objectMapper.readTree(response);
 
-            // Extract linkToSong from first data object
-            final JsonNode firstDataNode = rootNode.path("data").get(0);
-            final String linkToSong = firstDataNode.path("md5").asText();
+                // Extract linkToSong from first data object
+                if (rootNode.isEmpty()) {
+                    // TODO deal with this better
+                    return "null";
+                }
+
+                final JsonNode firstDataNode = rootNode.path("data").get(0);
+                final String linkToSong = firstDataNode.path("md5").asText();
 
 //            System.out.println("Extracted MD5: " + linkToSong);
-            return linkToSong;
-        } catch (Exception e) {
-            e.printStackTrace();
+                return linkToSong;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        return null;
+        // TODO deal with this better
+        return "null";
     }
 }

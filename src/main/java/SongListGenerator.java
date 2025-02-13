@@ -1,14 +1,20 @@
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class SongListGenerator {
 
-    private static final String enchorLink = "https://www.enchor.us/chart/";
+    private static final String enchorLink = "https://www.enchor.us/";
 
     public Stream<Song> generateSongs() {
         final Path searchDirectory = getDirectory();
@@ -17,7 +23,7 @@ public class SongListGenerator {
         final Stream<Path> streamOfSongFiles = songFilter.getSongConfigFiles(searchDirectory);
 
         try {
-            return getSongs(streamOfSongFiles).distinct().sorted();
+            return getSongs(streamOfSongFiles);
         } catch (IOException e){
             System.out.println();
             throw new RuntimeException(e);
@@ -60,55 +66,67 @@ public class SongListGenerator {
      * @throws IOException need for new Scanner
      */
     private Stream<Song> getSongs(final Stream<Path> streamOfSongConfig) throws IOException {
-        final Stream.Builder<Song> builder = Stream.builder();
+        final Set<Song> songSet = new LinkedHashSet<>();
 
         final EnchorQuery enchorQuery = new EnchorQuery();
         // get info from songs and add to the builder
-        streamOfSongConfig.forEach(path -> {
+        streamOfSongConfig.parallel().forEach(path -> {
 
-            final Scanner scanner;
 
             try {
-                scanner = new Scanner(path);
-            } catch (IOException e) {
+                BufferedReader reader = Files.newBufferedReader(path);
+                String name = "", artist = "", charter = "";
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+
+                    if (name.isEmpty() || artist.isEmpty() || charter.isEmpty()) {
+
+                        final String strip = line
+                                .replaceAll("<color=.*?>|</color>", "")
+                                .substring(line.indexOf("=") + 1)
+                                .strip();
+
+                        if (line.startsWith("artist")) {
+                            artist = strip;
+                        } else if (line.startsWith("name")) {
+                            name = strip;
+                        } else if (line.startsWith("charter")) {
+                            charter = strip;
+                        }
+
+                    } else {
+                        //add to builder and exit when name, artist, and charter are found
+                        String advancedSearch = enchorQuery.getEnchorLink(name, artist, charter);
+                        if (advancedSearch.equals("null")) {
+//                        System.out.println("NOT FOUND");
+                            songSet.add(new Song(
+                                    name,
+                                    artist,
+                                    charter,
+                                    "not found :("
+                            ));
+                        } else { // returns an actual chart that matches
+                            songSet.add(new Song(
+                                    name,
+                                    artist,
+                                    charter,
+                                    "=HYPERLINK(\"" + enchorLink + "chart/" + advancedSearch + "\")"
+                            ));
+                        }
+                        break;
+                    }
+                }
+            }
+            catch (IOException e) {
                 System.out.println("Cannot create scanner for path: " + path);
                 throw new RuntimeException(e);
             }
-
-            String name = "", artist = "", charter = "";
-
-            while (scanner.hasNext()) {
-                if (name.isEmpty() || artist.isEmpty() || charter.isEmpty()) {
-                    final String line = scanner.nextLine();
-                    if (line.startsWith("artist")) {
-                        artist = line
-                                .replaceAll("<color=.*?>|</color>", "")
-                                .split("=")[1]
-                                .strip();
-                    } else if (line.startsWith("name")) {
-                        name = line
-                                .replaceAll("<color=.*?>|</color>", "")
-                                .split("=")[1]
-                                .strip();
-                    } else if (line.startsWith("charter")) {
-                        charter = line
-                                .replaceAll("<color=.*?>|</color>", "")
-                                .split("=")[1]
-                                .strip();
-                    }
-                } else {
-                    //add to builder and exit when name, artist, and charter are found
-                    builder.add(new Song(
-                            name,
-                            artist,
-                            charter,
-                            "=HYPERLINK(\"" + enchorLink + enchorQuery.getEnchorLink(name, artist, charter) + "\")"
-                    ));
-                    break;
-                }
-            }
         });
-        return builder.build();
+        return songSet.stream().sorted(
+                Comparator.comparing(Song::name)
+                        .thenComparing(Song::linkToSong)
+        );
     }
 
 }
