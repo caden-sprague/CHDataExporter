@@ -18,11 +18,11 @@ public class Runner {
         System.out.println("PROGRAM START");
 
         SongListGenerator generator = new SongListGenerator();
-        TextFileGenerator textFileGenerator = new TextFileGenerator();
+        CSVGenerator textFileGenerator = new CSVGenerator();
 
-        String userHome = System.getProperty("user.home");
+        final String userHome = System.getProperty("user.home");
 
-        File outputTo = new File(userHome + File.separator + "Downloads" + File.separator + "output.txt");
+        final File outputTo = new File(userHome + File.separator + "Downloads" + File.separator + "output.csv");
         textFileGenerator.generateFile(generator.generateSongs(),  outputTo);
 
         System.out.println("Created output.txt in location: \"" + outputTo.getAbsolutePath() + "\"");

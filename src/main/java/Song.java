@@ -7,7 +7,7 @@
  */
 public record Song (String name, String artist, String charter) implements Comparable {
     public String toString() {
-        return name + " | " + artist + " | " + charter;
+        return name + " - " + artist + " - " + charter;
     }
 
     /**
@@ -16,7 +16,7 @@ public record Song (String name, String artist, String charter) implements Compa
      * @return String.compareTo of the name values
      */
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(final Object o) {
         return name.compareTo(((Song) o).name);
     }
 

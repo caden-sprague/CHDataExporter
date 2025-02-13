@@ -4,31 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a3b7a02-a585-475e-aa94-bdf560e03bfc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/_CHDataExporter.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3a3b7a02-a585-475e-aa94-bdf560e03bfc" name="Changes" comment="Lots of stuff idek2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CSVGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CloneHeroSongList.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongFilterImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongListGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongListGeneratorImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextFileGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextFileGeneratorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Song.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,6 +53,7 @@
     "Application.Runner.executor": "Run",
     "HTTP Request.scratch | #2.executor": "Run",
     "Maven.clone-hero-song-list [clean].executor": "Run",
+    "Maven.clone-hero-song-list [install].executor": "Run",
     "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-assembly-plugin:3.6.0:single].executor": "Run",
     "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-assembly-plugin:3.7.1:help].executor": "Run",
     "Maven.clone-hero-song-list [org.apache.maven.plugins:maven-assembly-plugin:3.7.1:single].executor": "Run",
@@ -225,12 +221,34 @@
       <workItem from="1739394705389" duration="3179000" />
       <workItem from="1739398533364" duration="3585000" />
       <workItem from="1739402255700" duration="210000" />
-      <workItem from="1739402473937" duration="1921000" />
+      <workItem from="1739402473937" duration="4550000" />
     </task>
+    <task id="LOCAL-00001" summary="Lots of stuff idek">
+      <option name="closed" value="true" />
+      <created>1739404589837</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739404589837</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lots of stuff idek2">
+      <option name="closed" value="true" />
+      <created>1739404677698</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739404677698</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lots of stuff idek" />
+    <MESSAGE value="Lots of stuff idek2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lots of stuff idek2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
