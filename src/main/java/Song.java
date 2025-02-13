@@ -5,9 +5,9 @@
  * @param artist
  * @param charter
  */
-public record Song (String name, String artist, String charter) implements Comparable {
+public record Song (String name, String artist, String charter, String linkToSong) implements Comparable {
     public String toString() {
-        return name + " - " + artist + " - " + charter;
+        return name + " - " + artist + " - " + charter + " - " + linkToSong;
     }
 
     /**

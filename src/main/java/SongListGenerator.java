@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 
 public class SongListGenerator {
 
+    private static final String enchorLink = "https://www.enchor.us/chart/";
+
     public Stream<Song> generateSongs() {
         final Path searchDirectory = getDirectory();
 
@@ -60,6 +62,7 @@ public class SongListGenerator {
     private Stream<Song> getSongs(final Stream<Path> streamOfSongConfig) throws IOException {
         final Stream.Builder<Song> builder = Stream.builder();
 
+        final EnchorQuery enchorQuery = new EnchorQuery();
         // get info from songs and add to the builder
         streamOfSongConfig.forEach(path -> {
 
@@ -98,7 +101,8 @@ public class SongListGenerator {
                     builder.add(new Song(
                             name,
                             artist,
-                            charter
+                            charter,
+                            "=HYPERLINK(\"" + enchorLink + enchorQuery.getEnchorLink(name, artist, charter) + "\")"
                     ));
                     break;
                 }

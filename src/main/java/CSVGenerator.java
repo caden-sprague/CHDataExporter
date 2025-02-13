@@ -1,4 +1,3 @@
-import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import java.io.File;
@@ -10,7 +9,7 @@ import java.util.stream.Stream;
 // eg jackson
 public class CSVGenerator {
     public void generateFile(final Stream<Song> songs, final File outputLocation) throws IOException {
-        CSVWriter writer = new CSVWriter(new FileWriter(outputLocation));
+        final CSVWriter writer = new CSVWriter(new FileWriter(outputLocation));
 
         songs.forEach(song -> writer.writeNext(song.toString().split(" - ")));
 
